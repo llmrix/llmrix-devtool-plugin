@@ -20,3 +20,7 @@ args = ["-y", "llmrix-devtool", "acp"]
 [agent_servers.llmrix.targets.linux-x86_64]
 cmd = "npx"
 args = ["-y", "llmrix-devtool", "acp"]
+
+[agent_servers.llmrix.targets.windows-x86_64]
+cmd = "npx.cmd"
+args = ["-y", "llmrix-devtool", "acp"]
