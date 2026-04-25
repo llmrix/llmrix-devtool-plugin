@@ -1,0 +1,24 @@
+<idea-plugin>
+    <id>com.llmrix.devtool</id>
+    <name>Llmrix Devtool</name>
+    <vendor>llmrix</vendor>
+
+    <description><![CDATA[
+    Llmrix Devtool is an AI coding agent for autonomous development workflows.
+    It provides intelligent coding assistance and automates repetitive tasks directly within your IDE.
+    ]]></description>
+
+    <change-notes><![CDATA[
+    Initial release of Llmrix Devtool agent integration.
+    ]]>
+    </change-notes>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.ml.llm</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <ai.assistant.agentServer implementation="com.llmrix.devtool.LlmrixAgentServer"
+                                 id="llmrix-devtool-agent"
+                                 name="Llmrix Agent"/>
+    </extensions>
+</idea-plugin>

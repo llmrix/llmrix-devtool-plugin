@@ -1,0 +1,3 @@
+packages:
+  - 'plugins/*'
+  - 'core' # 未来可以将 llmrix-devtool 源码迁移至此

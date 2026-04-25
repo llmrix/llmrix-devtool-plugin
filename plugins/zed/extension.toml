@@ -1,0 +1,22 @@
+id = "llmrix-devtool"
+name = "Llmrix Devtool"
+version = "0.1.0"
+schema_version = 1
+authors = ["llmrix"]
+description = "Llmrix AI coding agent for autonomous dev workflows."
+repository = "https://github.com/llmrix/llmrix-devtool-plugin"
+
+[agent_servers.llmrix]
+name = "Llmrix"
+
+[agent_servers.llmrix.targets.darwin-aarch64]
+cmd = "npx"
+args = ["-y", "llmrix-devtool", "acp"]
+
+[agent_servers.llmrix.targets.darwin-x86_64]
+cmd = "npx"
+args = ["-y", "llmrix-devtool", "acp"]
+
+[agent_servers.llmrix.targets.linux-x86_64]
+cmd = "npx"
+args = ["-y", "llmrix-devtool", "acp"]
