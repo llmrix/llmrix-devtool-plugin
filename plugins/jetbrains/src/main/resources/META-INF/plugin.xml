@@ -1,17 +1,53 @@
 <idea-plugin>
     <id>com.llmrix.devtool</id>
     <name>Llmrix Devtool</name>
-    <vendor>llmrix</vendor>
+    <version>0.1.0</version>
+    <vendor url="https://llmrix.com" email="support@llmrix.com">llmrix</vendor>
 
     <description><![CDATA[
-    Llmrix Devtool is an AI coding agent for autonomous development workflows.
-    It provides intelligent coding assistance and automates repetitive tasks directly within your IDE.
+        <h2>Llmrix Devtool — AI Coding Agent for JetBrains IDEs</h2>
+        <p>
+            <b>Llmrix Devtool</b> integrates the Llmrix multi-agent AI platform directly into your JetBrains IDE
+            via the built-in AI Assistant. It launches a local Llmrix agent server and connects it to the IDE's
+            conversation interface, giving you a powerful autonomous coding partner without leaving your editor.
+        </p>
+        <h3>Key Features</h3>
+        <ul>
+            <li>🤖 <b>Autonomous coding agent</b> — delegates complex multi-step tasks to Llmrix agents capable of reading, writing, and refactoring code across your entire project.</li>
+            <li>⚡ <b>Zero configuration</b> — spins up automatically via <code>npx llmrix-devtool acp</code>. No manual setup required.</li>
+            <li>🔧 <b>Full IDE context</b> — agents can read files, run terminal commands, edit code, and navigate your project structure seamlessly.</li>
+            <li>🔌 <b>ACP-compatible</b> — built on the Agent Client Protocol for future-proof integration with JetBrains AI Assistant.</li>
+            <li>🌐 <b>Multi-agent collaboration</b> — leverage specialized agents working together on complex development tasks.</li>
+        </ul>
+        <h3>How It Works</h3>
+        <p>
+            The plugin starts a local Llmrix agent server that communicates with JetBrains AI Assistant via the ACP (Agent Client Protocol).
+            Simply open the AI Assistant chat panel, select "Llmrix Agent" from the agent picker, and start delegating tasks.
+        </p>
+        <h3>Requirements</h3>
+        <ul>
+            <li>IntelliJ IDEA 2024.3+ (or other JetBrains IDE 2024.3+)</li>
+            <li>Node.js 18+ installed on your system</li>
+            <li>JetBrains AI Assistant subscription (or trial)</li>
+        </ul>
+        <h3>Links</h3>
+        <p>
+            <a href="https://github.com/llmrix/llmrix-devtool-plugin">GitHub</a> |
+            <a href="https://llmrix.com/docs">Documentation</a> |
+            <a href="https://llmrix.com">Website</a>
+        </p>
     ]]></description>
 
     <change-notes><![CDATA[
-    Initial release of Llmrix Devtool agent integration.
-    ]]>
-    </change-notes>
+        <b>0.1.0</b>
+        <ul>
+            <li>Initial release of Llmrix Devtool agent integration for JetBrains AI Assistant.</li>
+            <li>ACP-compatible agent server launched automatically via npx.</li>
+        </ul>
+    ]]></change-notes>
+
+    <!-- Minimum IDE build: 2024.3 (243.*); no upper bound set to allow rolling forward -->
+    <idea-version since-build="243" />
 
     <depends>com.intellij.modules.platform</depends>
     <depends>com.intellij.ml.llm</depends>

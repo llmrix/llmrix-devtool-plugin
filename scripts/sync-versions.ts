@@ -19,12 +19,16 @@ if (fs.existsSync(zedPath)) {
 }
 
 // 2. Sync to JetBrains (build.gradle.kts)
+// Note: build.gradle.kts has TWO version fields:
+//   - top-level:               version = "x.y.z"
+//   - pluginConfiguration:     version = "x.y.z"
+// We replace ALL occurrences so both stay in sync.
 const jbPath = path.join(__dirname, '../plugins/jetbrains/build.gradle.kts');
 if (fs.existsSync(jbPath)) {
     let content = fs.readFileSync(jbPath, 'utf-8');
-    content = content.replace(/version\s*=\s*".*"/, `version = "${version}"`);
+    content = content.replaceAll(/version\s*=\s*"[^"]*"/g, `version = "${version}"`);
     fs.writeFileSync(jbPath, content);
-    console.log('Updated JetBrains build.gradle.kts');
+    console.log('Updated JetBrains build.gradle.kts (both version fields)');
 }
 
 console.log('Done!');
