@@ -22,7 +22,8 @@ repositories {
 
 dependencies {
     intellijPlatform {
-        local(file("/Applications/IntelliJ IDEA.app"))
+        // Use the downloaded IDE version for cross-platform compatibility
+        intellijIdeaCommunity("2024.3")
         plugin("com.intellij.ml.llm", "243.23654.270.16")
         instrumentationTools()
         pluginVerifier()
