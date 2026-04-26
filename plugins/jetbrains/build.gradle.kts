@@ -1,7 +1,13 @@
 plugins {
     id("java")
     id("org.jetbrains.kotlin.jvm") version "1.9.22"
-    id("org.jetbrains.intellij.platform") version "2.15.0"
+    id("org.jetbrains.intellij.platform") version "2.1.0"
+}
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(21))
+    }
 }
 
 group = "com.llmrix"
@@ -16,8 +22,10 @@ repositories {
 
 dependencies {
     intellijPlatform {
-        intellijIdeaCommunity("2024.3")
-        // AI Assistant (com.intellij.ml.llm) is bundled in 2024.3+, no external dependency needed
+        local(file("/Applications/IntelliJ IDEA.app"))
+        plugin("com.intellij.ml.llm", "243.23654.270.16")
+        instrumentationTools()
+        pluginVerifier()
     }
 }
 
@@ -31,8 +39,13 @@ intellijPlatform {
         }
         vendor {
             name = "llmrix"
-            url = "https://llmrix.com"
+            url = "https://www.llmrix.com"
             email = "support@llmrix.com"
+        }
+    }
+    pluginVerification {
+        ides {
+            recommended()
         }
     }
 }
